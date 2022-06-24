@@ -106,15 +106,20 @@ function Game() {
 
 
   // function for reset button
-  const handleClick = () => {
-//     if(count ===20){
-//    window.location.reload();
-//     }
-window.location.reload();
+//   const handleClick = () => {
+// //     if(count ===20){
+// //    window.location.reload();
+// //     }
+// window.location.reload();
 
-  }
+//   }
      
-//   
+// 
+
+function handleClick(){
+  
+    window.location.reload();
+}
      
 
 // Game UI
@@ -137,7 +142,7 @@ window.location.reload();
         <div className='inp' >
             <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} />
             {/* <input className="btn" type="button" value="RESET" onClick={handleClick}></input> */}
-            <button className='btn' onclick={handleClick} placeholder="Type here"  onKeyDown={handleChange}>Reset</button>
+            <button  className='btn' onClick={handleClick} placeholder="Type here"  >Reset</button>
         </div>
         
     </div>
