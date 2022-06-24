@@ -60,10 +60,13 @@ function Game() {
 
     // main logic of the game
     const handleChange= (e) => {
-        setTiming(true)
-        if(e.key.toUpperCase() === alpha){
+        if(count === 1){
+            setTiming(true);
+        }
+        if(e.code === `${"Key"}${alpha}`){
             if(count === 20 ){
                 setTiming(false);
+                setCount(count +1)
                 setScore();
             }else{
                 setCount(count+1);
@@ -71,7 +74,10 @@ function Game() {
             setAlpha(randomAlpha);
             }
         }else{
+        if(count <= 20){
             setMiliSeconds(miliSeconds+500);
+        }
+        
 
         }
     }
@@ -90,7 +96,7 @@ function Game() {
         localStorage.setItem('score',JSON.stringify(clock));
         setHigh(clock)
         console.log(clock);
-        setAlpha('SUCCESS');
+        setAlpha('SUCCESS!');
     }else if(JSON.parse(localStorage.getItem('score')) > clock){
         localStorage.removeItem('score')
         localStorage.setItem('score', JSON.stringify(clock))
@@ -117,8 +123,9 @@ function Game() {
 // 
 
 const handleClick = ()=>{
-  
+    if(count === 21){
     window.location.reload(false);
+    }
 }
      
 
@@ -140,7 +147,8 @@ const handleClick = ()=>{
         </div>
 
         <div className='inp' >
-            <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} />
+            {/* <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} /> */}
+            <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyUp={handleChange} />
             {/* <input className="btn" type="button" value="RESET" onClick={handleClick}></input> */}
             <button  className='btn' onClick={handleClick} placeholder="Type here" >Resetttt</button>
         </div>
