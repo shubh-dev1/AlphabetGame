@@ -118,7 +118,7 @@ function Game() {
 
 const handleClick = ()=>{
   
-    window.location.reload();
+    window.location.reload(false);
 }
      
 
