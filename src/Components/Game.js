@@ -134,7 +134,7 @@ function Game() {
         </div>
 
         <div className='inp' >
-            <input className='input' ref ={inputRef} type="text" placeholder='Type here' onKeyPress={handleChange} />
+            <input className='input' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} />
             <input className="btn" type="button" value="RESET" onClick={handleClick}></input>
         </div>
         
