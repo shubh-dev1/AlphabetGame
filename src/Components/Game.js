@@ -142,7 +142,7 @@ const handleClick = ()=>{
         <div className='inp' >
             <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} />
             {/* <input className="btn" type="button" value="RESET" onClick={handleClick}></input> */}
-            <button  className='btn' onClick={handleClick} placeholder="Type here"  >Reset</button>
+            <button  className='btn' onClick={handleClick} placeholder="Type here"  >Resettt</button>
         </div>
         
     </div>
