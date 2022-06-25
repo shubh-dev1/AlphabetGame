@@ -54,17 +54,24 @@ function Game() {
         return ()=> clearInterval(timer);
     }})
   
+      function incre(){
+        setMiliSeconds(miliSeconds + 500);
+       
 
+      }
 
 
 
     // main logic of the game
     const handleChange= (e) => {
+      
         if(count === 1){
             setTiming(true);
         }
-        if(e.code === `${"Key"}${alpha}`){
-            if(count === 20 ){
+      
+        if(e.target.value.toUpperCase() == alpha){
+            e.target.value=""
+            if(count === 5 ){
                 setTiming(false);
                 setCount(count +1)
                 setScore();
@@ -73,11 +80,10 @@ function Game() {
             const randomAlpha = getRandomAlpha();
             setAlpha(randomAlpha);
             }
-        }else{
-        if(count <= 20){
-            setMiliSeconds(miliSeconds+500);
-        }
-        
+        }else if(count <=5){
+           incre();
+           e.target.value = ''
+      
 
         }
     }
@@ -123,7 +129,7 @@ function Game() {
 // 
 
 const handleClick = ()=>{
-    if(count === 21){
+    if(count === 6){
     window.location.reload(false);
     }
 }
@@ -148,7 +154,7 @@ const handleClick = ()=>{
 
         <div className='inp' >
             {/* <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} /> */}
-            <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyUp={handleChange} />
+            <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onChange={handleChange} />
             {/* <input className="btn" type="button" value="RESET" onClick={handleClick}></input> */}
             <button  className='btn' onClick={handleClick} placeholder="Type here" >Resetttt</button>
         </div>
