@@ -69,7 +69,7 @@ function Game() {
         }
         if(val[val.length-1].toUpperCase() == alpha){
              
-            if(count === 5 ){
+            if(count === 20 ){
                 setTiming(false);
                 setCount(count +1)
                 setScore();
@@ -78,7 +78,7 @@ function Game() {
             const randomAlpha = getRandomAlpha();
             setAlpha(randomAlpha);
             }
-        }else if(count <=5){
+        }else if(count <=20){
            incre();
             
         }
@@ -114,7 +114,7 @@ function Game() {
 
 
 const handleClick = ()=>{
-    if(count === 6){
+    if(count === 21){
     window.location.reload(false);
     }
 }
