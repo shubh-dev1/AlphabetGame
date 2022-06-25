@@ -56,8 +56,6 @@ function Game() {
   
       function incre(){
         setMiliSeconds(miliSeconds + 500);
-       
-
       }
 
 
@@ -71,7 +69,7 @@ function Game() {
       
         if(e.target.value.toUpperCase() == alpha){
             e.target.value=""
-            if(count === 5 ){
+            if(count === 20 ){
                 setTiming(false);
                 setCount(count +1)
                 setScore();
@@ -80,7 +78,7 @@ function Game() {
             const randomAlpha = getRandomAlpha();
             setAlpha(randomAlpha);
             }
-        }else if(count <=5){
+        }else if(count <=20){
            incre();
            e.target.value = ''
       
@@ -117,19 +115,8 @@ function Game() {
   }
 
 
-  // function for reset button
-//   const handleClick = () => {
-// //     if(count ===20){
-// //    window.location.reload();
-// //     }
-// window.location.reload();
-
-//   }
-     
-// 
-
 const handleClick = ()=>{
-    if(count === 6){
+    if(count === 21){
     window.location.reload(false);
     }
 }
@@ -156,7 +143,7 @@ const handleClick = ()=>{
             {/* <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onKeyDown={handleChange} /> */}
             <input className='inpu' ref ={inputRef} type="text" placeholder='Type here' onChange={handleChange} />
             {/* <input className="btn" type="button" value="RESET" onClick={handleClick}></input> */}
-            <button  className='btn' onClick={handleClick} placeholder="Type here" >Resetttt</button>
+            <button  className='btn' onClick={handleClick} placeholder="Type here" >Reset</button>
         </div>
         
     </div>
